@@ -1,0 +1,15 @@
+app = "preview-router"
+primary_region = "sjc"          # or your nearest Fly region
+kill_signal = "SIGINT"
+kill_timeout = 5
+processes = []
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https  = true           # redirect http → https
